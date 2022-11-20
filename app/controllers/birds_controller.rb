@@ -3,7 +3,6 @@ class BirdsController < ApplicationController
   # added rescue_from
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
-  validates :name, presence: true, uniqueness: true
   # GET /birds
   def index
     birds = Bird.all
